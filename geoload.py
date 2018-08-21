@@ -14,7 +14,7 @@ serviceurl = "https://maps.googleapis.com/maps/api/place/textsearch/json?"
 # Additional detail for urllib
 # http.client.HTTPConnection.debuglevel = 1
 
-conn = sqlite3.connect('database_and_visualization/geodata.sqlite')
+conn = sqlite3.connect('geodata.sqlite')
 cur = conn.cursor()
 
 cur.execute('''
@@ -25,7 +25,7 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-fh = open("database_and_visualization/where.data")
+fh = open("where.data")
 count = 0
 for line in fh:
     if count > 200 :
